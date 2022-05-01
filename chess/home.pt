@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>${title}</title>
+    <style>
+        @font-face {
+            font-family: ChessFont;
+            src: url(${request.static_url('chess:static/fonts/Chess.ttf') });
+        }
+    </style>
+    <link
+        rel="stylesheet"
+        href="${request.static_url('chess:static/stylesheets/app.css') }"
+    />
+    <link
+        rel="stylesheet"
+        href="${request.static_url('chess:static/stylesheets/' + name + '.css') }"
+    />
+</head>
+<body>
+    <h1 class='title'>${title}</h1>
+
+    <div class="error-message">${error}</div>
+    <div class='main-container'><div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="${request.static_url('chess:static/javascript/' + name + '.js') }"></script>
+</body>
+</html>

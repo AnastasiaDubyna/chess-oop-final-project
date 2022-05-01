@@ -1,0 +1,38 @@
+.title {
+    text-align: center;
+}
+
+.login-form {
+    position: relative;
+}
+
+.inner-container {
+    position: absolute;
+    left: calc( 50% - 160px);
+}
+
+.username-input {
+    width: 236px;
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 0;
+    border: 1px solid #898989
+}
+
+.submit-button {
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 0;
+    border: 1px #454589 solid;
+    background-color: #454589;
+    text-transform: uppercase;
+    color: white;
+}
+
+.error-message {
+    width: 320px;
+    margin: auto;
+    padding: 12px 16px;
+    font-weight: bold;
+    color: #ff6264;
+}

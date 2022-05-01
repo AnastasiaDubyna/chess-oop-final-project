@@ -1,0 +1,156 @@
+:root {
+    --cell-size: 96px;
+    --piece-red: #d85472;
+    --piece-dark: #3f175e;
+    --piece-dark-alt: #57263a;
+    --piece-light: #f7ac88;
+}
+
+.title {
+    position: relative;
+    left: calc(50% - 3 * var(--cell-size));
+}
+
+.main-container {
+    position: relative;
+    left: calc(50% - 3 * var(--cell-size));
+}
+
+.black-player, .white-player {
+    padding: 16px 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.board {
+    display: inline-block;
+    border: 1px solid #555e78;
+}
+
+.board-row {
+    display: flex;
+    width: calc(8 * var(--cell-size));
+    height: var(--cell-size);
+}
+
+.letters-row {
+    display: flex;
+    width: calc(8 * var(--cell-size));
+    height: calc(var(--cell-size)/2);
+}
+
+.letters-row:first-of-type > .letters-cell {
+    border-bottom: #555e78 1px solid;
+    height: calc(var(--cell-size)/2 - 1px);
+}
+
+.letters-row:last-of-type > .letters-cell {
+    border-top: #555e78 1px solid;
+    height: calc(var(--cell-size)/2 - 1px);
+}
+
+.letters-row:first-of-type > .letters-cell:nth-of-type(2),
+.letters-row:last-of-type > .letters-cell:nth-of-type(2) {
+    margin-left: -1px;
+    z-index: 2;
+}
+
+.letters-row:first-of-type > .letters-cell:nth-of-type(9),
+.letters-row:last-of-type > .letters-cell:nth-of-type(9) {
+    margin-right: -1px;
+    z-index: 2;
+}
+
+.letters-row:last-of-type > .letters-cell:first-of-type,
+.letters-row:last-of-type > .letters-cell:last-of-type {
+    border-bottom: #fee8cb 1px solid !important;
+}
+
+.letters-cell {
+    display: inline-block;
+    width: var(--cell-size);
+    height: calc(var(--cell-size)/2);
+    font-size: 28px;
+    line-height: 46px;
+    text-align: center;
+    user-select: none;
+    color: #555e78;
+    background-color: #fee8cb;
+}
+
+.letters-cell:first-of-type, .letters-cell:last-of-type {
+    width: calc(var(--cell-size)/2);
+    border: none !important;
+}
+
+.row-number-cell:first-of-type {
+    border-right: #555e78 1px solid;
+    width: calc(var(--cell-size)/2 - 1px);
+}
+
+.row-number-cell:last-of-type {
+    border-left: #555e78 1px solid;
+    width: calc(var(--cell-size)/2 - 1px);
+}
+
+.board-row:nth-of-type(2) > .row-number-cell:first-of-type,
+.board-row:nth-of-type(2) > .row-number-cell:last-of-type {
+    height: calc(var(--cell-size) + 1px);
+    margin-top: -1px;
+    z-index: 2;
+}
+
+.board-row:nth-of-type(9) > .row-number-cell:first-of-type,
+.board-row:nth-of-type(9) > .row-number-cell:last-of-type {
+    height: calc(var(--cell-size) + 1px);
+    margin-bottom: -1px;
+    z-index: 2;
+}
+
+.row-number-cell {
+    display: inline-block;
+    height: var(--cell-size);
+    width: calc(var(--cell-size)/2);
+    font-size: 28px;
+    text-align: center;
+    user-select: none;
+    line-height: 96px;
+    color: #555e78;
+    background-color: #fee8cb;
+}
+
+.board-cell {
+    display: inline-block;
+    width: calc(var(--cell-size) - (var(--cell-size)/6));
+    height: var(--cell-size);
+    font-family: ChessFont;
+    font-size: 96px;
+    text-align: center;
+    padding-left: calc(var(--cell-size)/6);
+    line-height: calc(var(--cell-size) + (var(--cell-size)/6));
+    user-select: none;
+}
+
+.board-cell.selected {
+    box-shadow:inset 0px 0px 0px 4px #81d4ea
+}
+
+.board-piece-black {
+    color: var(--piece-dark-alt);
+    cursor: pointer;
+}
+
+.board-piece-white {
+    color: var(--piece-light);
+    cursor: pointer;
+}
+
+.board-row:nth-of-type(odd) > .board-cell:nth-of-type(odd),
+.board-row:nth-of-type(even) > .board-cell:nth-of-type(even) {
+    background-color: #fee8cb;
+}
+
+.board-row:nth-of-type(odd) > .board-cell:nth-of-type(even),
+.board-row:nth-of-type(even) > .board-cell:nth-of-type(odd) {
+    background-color: #555e78;
+}
